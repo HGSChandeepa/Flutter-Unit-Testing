@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_testing/counter.dart';
+import 'package:flutter_testing/api_app/screens/post_screen.dart';
+import 'package:flutter_testing/counter/counter.dart';
+import 'package:flutter_testing/todo_app/screens/todo_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,39 +18,6 @@ class _MyAppState extends State<MyApp> {
   final Counter counter = Counter();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: Column(
-          children: [
-            Text(
-              counter.count.toString(),
-              style: const TextStyle(color: Colors.white),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      counter.add();
-                    });
-                  },
-                  child: const Text("add"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      counter.sub();
-                    });
-                  },
-                  child: const Text("sub"),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+    return MaterialApp(home: PostScreen());
   }
 }
